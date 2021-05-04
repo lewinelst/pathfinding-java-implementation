@@ -2,9 +2,9 @@ public class RamblersSearch extends Search{
 
     private TerrainMap map;
     private Coords goal;
-    public RamblersSearch(TerrainMap m, int goalX, int goalY){
+    public RamblersSearch(TerrainMap m, Coords g){
         map = m;
-        goal = new Coords(goalY, goalX);
+        goal = g;
     }
 
     public TerrainMap returnMap(){

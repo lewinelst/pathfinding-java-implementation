@@ -1,3 +1,3 @@
-public class RamblersState {
+public class RamblersState extends SearchState{
     
 }
