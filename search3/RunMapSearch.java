@@ -6,7 +6,7 @@ public class RunMapSearch {
         int tmap[][] = map.getTmap();
     
         RamblersSearch search = new RamblersSearch(map, goal);
-        SearchState startState = (SearchState) new RamblersState(new Coords(0, 7), tmap[0][7]);
+        SearchState startState = (SearchState) new RamblersState(new Coords(7, 0), tmap[7][0]);
         String output = search.runSearch(startState, "breadthFirst");
         System.out.println(output);
     }
