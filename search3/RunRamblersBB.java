@@ -1,4 +1,4 @@
-public class RunMapSearch {
+public class RunRamblersBB {
     public static void main(String[] args){
         TerrainMap map = new TerrainMap("search3/tmc.pgm");
         Coords goal = new Coords(5, 8);
