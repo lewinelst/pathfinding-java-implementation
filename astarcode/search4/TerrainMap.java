@@ -113,10 +113,17 @@ public class TerrainMap {
       tmap[c.gety()][c.getx()] = 255;
   }
 
-  public int manhattenEst(Coords start, Coords finish){ // Works out manhatten distance 
-    Double diff = (double)(((finish.gety() - start.gety()) * (finish.gety() - start.gety())) - ((finish.getx() - start.getx()) * (finish.getx() - start.getx())));
-    Double est = Math.sqrt(Math.abs(diff)) * 1000;
+  public int eucledianEst(Coords start, Coords finish){ // Works out eucledian distance 
+    Double diff = (double)(((finish.gety() - start.gety()) * (finish.gety() - start.gety())) + ((finish.getx() - start.getx()) * (finish.getx() - start.getx())));
+    Double est = Math.sqrt(Math.abs(diff)) * 1000; // Multiplied by 1000 as needs to be converted to integer and maintain the decimal accuracy
 
     return est.intValue();
   }
+
+  public int manhattenEst(Coords start, Coords finish){ // Works out manhatten estimate 
+    int est = (Math.abs(finish.getx() - start.getx()) + Math.abs(finish.gety() - start.gety()));
+    return est;
+  }
+
+
 }

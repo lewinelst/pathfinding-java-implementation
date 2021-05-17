@@ -45,27 +45,27 @@ public class RamblersState extends SearchState{
         //North
         if((y - 1) > 0){
             Coords newCoordinates = new Coords(y - 1, x);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.eucledianEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
         //East
         if((x + 1) < map.getWidth()){
             Coords newCoordinates = new Coords(y, x + 1);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.eucledianEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
         //South
         if((y + 1) < map.getDepth()){
             Coords newCoordinates = new Coords(y + 1, x);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.eucledianEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
         //West
         if((x - 1) > 0){
             Coords newCoordinates = new Coords(y, x - 1);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.eucledianEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
