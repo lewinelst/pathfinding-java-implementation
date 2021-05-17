@@ -112,4 +112,11 @@ public class TerrainMap {
     for (Coords c : path)
       tmap[c.gety()][c.getx()] = 255;
   }
+
+  public int manhattenEst(Coords start, Coords finish){ // Works out manhatten distance 
+    Double diff = (double)(((finish.gety() - start.gety()) * (finish.gety() - start.gety())) - ((finish.getx() - start.getx()) * (finish.getx() - start.getx())));
+    Double est = Math.sqrt(Math.abs(diff)) * 1000;
+
+    return est.intValue();
+  }
 }

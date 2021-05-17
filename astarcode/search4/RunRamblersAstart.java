@@ -8,7 +8,7 @@ public class RunRamblersAstart {
         int tmap[][] = map.getTmap();
     
         RamblersSearch search = new RamblersSearch(map, goal);
-        SearchState startState = (SearchState) new RamblersState(new Coords(7, 0), tmap[7][0]);
+        SearchState startState = (SearchState) new RamblersState(new Coords(7, 0), tmap[7][0], 0);
         String output = search.runSearch(startState, "AStar");
 
     }

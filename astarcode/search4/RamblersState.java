@@ -5,9 +5,10 @@ public class RamblersState extends SearchState{
     private Coords stateCoord;
 
     //constructor
-    public RamblersState(Coords coord, int lc){
+    public RamblersState(Coords coord, int lc, int rc){
         stateCoord = coord;
         localCost = lc;
+        estRemCost = rc;
     }
 
     public Coords getCoords() { // returns coordinates
@@ -44,27 +45,27 @@ public class RamblersState extends SearchState{
         //North
         if((y - 1) > 0){
             Coords newCoordinates = new Coords(y - 1, x);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()]);
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
         //East
         if((x + 1) < map.getWidth()){
             Coords newCoordinates = new Coords(y, x + 1);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()]);
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
         //South
         if((y + 1) < map.getDepth()){
             Coords newCoordinates = new Coords(y + 1, x);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()]);
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
         //West
         if((x - 1) > 0){
             Coords newCoordinates = new Coords(y, x - 1);
-            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()]);
+            RamblersState newSuccessor = new RamblersState(newCoordinates, tmap[newCoordinates.gety()][newCoordinates.getx()], map.manhattenEst(stateCoord, ramSearcher.returnGoal()));
             successors.add(newSuccessor);
         }
 
@@ -74,5 +75,4 @@ public class RamblersState extends SearchState{
     public String toString(){
         return ("Ramblers State: " + "(" + stateCoord.gety() + "," + stateCoord.getx() + ")");
     }
-    
 }
