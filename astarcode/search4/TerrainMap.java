@@ -125,5 +125,10 @@ public class TerrainMap {
     return est;
   }
 
+  public int heightEst(Coords start, Coords finish){ // Calculates height difference 
+    int est = Math.abs(finish.gety() - start.gety());
+    return est;
+  }
+
 
 }
