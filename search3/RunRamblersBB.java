@@ -2,15 +2,15 @@ public class RunRamblersBB {
     public static void main(String[] args){
         // General Tests
         bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(5, 8), new Coords(7, 0));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 0), new Coords(15, 15));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 0), new Coords(15, 0));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 0), new Coords(0, 15));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(2, 2), new Coords(13, 13));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(15, 15), new Coords(0, 0));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(15, 0), new Coords(0, 0));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 15), new Coords(0, 0));
         bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(13, 13), new Coords(2, 2));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 0), new Coords(1, 1));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(0, 2), new Coords(8, 8));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(3, 5), new Coords(9, 7));
-        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(7, 7), new Coords(15, 15));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(2, 2), new Coords(13, 13));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(1, 1), new Coords(0, 0));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(8, 8), new Coords(0, 2));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(9, 7), new Coords(3, 5));
+        bFTest(new TerrainMap("search3/tmc.pgm"), new Coords(15, 15), new Coords(7, 7));
 
         // In Depth Tests
         /* 
